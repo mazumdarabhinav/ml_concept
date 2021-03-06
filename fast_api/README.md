@@ -2,7 +2,7 @@
 
 ## 1. Modern and Fast Web Framework for building API's
 
-## 2. Ste to run an FAST API App:
+## 2. Steps to run an FAST API App:
 
 `uvicorn app:app --reload`
 
