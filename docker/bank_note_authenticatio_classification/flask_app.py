@@ -26,14 +26,10 @@ def predict_note_autentication():
 
 
 @app.route("/predict_file", methods=["POST"])
-def predict_note_autentication():
-    variance = request.args.get("variance")
-    skweness = request.args.get("skweness")
-    curtosis = request.args.get("curtosis")
-    entropy = request.args.get("entropy")
-
-    prediction = classifier.predict([[variance, skweness, curtosis, entropy]])
-    return "The predicted value is :" + str(prediction)
+def predict_note_autentication_using_csv_file():
+    df = pd.read_csv(request.files.get("files"))
+    prediction = classifier.predict(df)
+    return "The predicted value is :" + str(list(prediction))
 
 
 if __name__ == "__main__":
